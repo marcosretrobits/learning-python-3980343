@@ -5,5 +5,12 @@
 
     
 # Open the file and read the contents
+sf = open("textfile.txt", "r")
 
+if sf.mode == 'r':
     # use the read() function to read the entire file
+    #cont = sf.read()
+    #print(cont)
+    lines = sf.readlines()
+    for line in lines:
+        print(line)

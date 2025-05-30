@@ -2,10 +2,13 @@
 # Working with modules of code
 
 # import the math module, which contains features for working with mathematics
+import math
 
+print("The sq rt of 16 is", math.sqrt(16))
 
 # import a specific part of the module so you can refer to it more easily
-
+from math import pi
+print("Pi is",pi)
 
 # import a module and give it a different name
 
@@ -17,11 +20,13 @@
 
 
 # Generate a random number between 100 and 200
-
+import random as r
+print(r.randint(100,200))
 
 # try some of the math functions for yourself here:
 
 # Use the 3rd party tabulate module to print tabulated data:
+from tabulate import tabulate
 
 # Sample data
 data = [
@@ -32,3 +37,18 @@ data = [
 ]
 
 # Create a formatted table
+print(tabulate(data, headers="firstrow", tablefmt="rounded_outline"))
+
+data2 = [["a","sin"]]
+
+a=0
+while (a<2*pi):
+  t = list()
+  t.append(a)
+  t.append(math.floor(math.sin(a)*100)/100)
+  data2.append(t)
+  a += pi/8
+
+print(tabulate(data2, headers="firstrow", tablefmt="rounded_outline"))
+
+#print(math.sin(2*pi))
